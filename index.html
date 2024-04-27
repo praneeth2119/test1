@@ -1,118 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sprout - Eco-Conscious Product Reviews</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Conscious Product Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f0f0f0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 200px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .product-card p {
+            color: #333;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .review-form {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form input,
+        .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .review-form button {
+            width: auto;
+            margin-top: 10px;
+        }
+
+        .review {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .review h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .review p {
+            color: #333;
+        }
+
+        .review p.rating {
+            margin-top: 5px;
+            color: #999;
+        }
+    </style>
 </head>
-<style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  background-color: #fff;
-  box-shadow: 0 2
-
-</style>
 <body>
-  <header>
-    <div class="container">
-      <h1>Sprout</h1>
-      <h2>Eco-Conscious Product Reviews</h2>
-      <p>Making informed choices for a greener future.</p>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#reviews">Latest Reviews</a></li>
-          <li><a href="#contribute">Contribute</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <h1>Welcome to Eco-Conscious Product Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section id="about">
-      <div class="container">
-        <h2>What is Sprout?</h2>
-        <p>Sprout is a platform dedicated to eco-conscious product reviews. We believe that informed consumers can make a positive impact on the environment. We provide in-depth reviews that analyze a product's sustainability practices, from materials and manufacturing to packaging and end-of-life options.</p>
-        <p>We empower you to make conscious choices by highlighting eco-friendly alternatives and helping you understand the environmental impact of the products you buy.</p>
-      </div>
-    </section>
+    <main>
+        <section>
+            <h2>Featured Product</h2>
+            <div class="product-card">
+                <img src="product-image1.jpg" alt="Product Image 1">
+                <img src="product-image2.jpg" alt="Product Image 2">
+                <img src="product-image3.jpg" alt="Product Image 3">
+                <h3>Product Name</h3>
+                <p>Description of the product...</p>
+                <button onclick="toggleReviewForm()">Write a Review</button>
+                <div class="review-form">
+                    <h3>Write a Review</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <textarea placeholder="Your Review"></textarea>
+                        <button type="submit">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-    <section id="categories">
-      <div class="container">
-        <h2>Explore by Category</h2>
-        <div class="category-cards">
-          <div class="card">
-            <img src="images/istockphoto-1222581489-612x612.jpg" alt="Home">
-            <h3>Home & Garden</h3>
-          </div>
-          <div class="card">
-            <img src="images/fashion.svg" alt="Fashion">
-            <h3>Fashion & Beauty</h3>
-          </div>
-          <div class="card">
-            <img src="images/tech.svg" alt="Technology">
-            <h3>Tech & Electronics</h3>
-          </div>
-          <div class="card">
-            <img src="images/food.svg" alt="Food">
-            <h3>Food & Beverages</h3>
-          </div>
-        </div>
-      </div>
-    </section>
+        <section>
+            <h2>Customer Reviews</h2>
+            <div id="reviews">
+                <!-- JavaScript will populate reviews here -->
+            </div>
+        </section>
+    </main>
 
-    <section id="reviews">
-      <div class="container">
-        <h2>Latest Reviews</h2>
-        <div class="review">
-          <h3>Reusable Water Bottle Showdown</h3>
-          <p>We put three popular reusable water bottles to the test. Read our review to find the most sustainable and long-lasting option for you!</p>
-          <a href="#" onclick="showReviewDetails('Reusable Water Bottle Showdown')">Read More</a>
-        </div>
-        <div class="review">
-          <h3>Eco-Friendly Cleaning Products: Do They Work?</h3>
-          <p>Can eco-friendly cleaning products be as effective as traditional ones? We investigate different brands and share our findings.</p>
-          <a href="#" onclick="showReviewDetails('Eco-Friendly Cleaning Products')">Read More</a>
-        </div>
-      </div>
-    </section>
+    <footer>
+        <p>&copy; 2024 Eco-Conscious Product Reviews</p>
+    </footer>
 
-    <section id="contribute">
-      <div class="container">
-        <h2>Join the Sprout Community</h2>
-        <p>Do you have a passion for sustainability and love sharing your eco-conscious finds? Contribute to Sprout by writing reviews, suggesting products, and engaging in discussions.</p>
-        <a href="#">Learn More</a>
-      </div>
-    </section>
-  </main>
+    <script>
+        // JavaScript code
+        function toggleReviewForm() {
+            var reviewForm = document.querySelector('.review-form');
+            if (reviewForm.style.display === 'none' || reviewForm.style.display === '') {
+                reviewForm.style.display = 'block';
+            } else {
+                reviewForm.style.display = 'none';
+            }
+        }
 
-  <footer>
-    <div class="container">
-      <p>&copy; Sprout 2024</p>
-      <a href="#">Contact Us</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-  </footer>
+        // Placeholder JavaScript code for handling customer reviews
+        // You can replace this with actual functionality
+        function populateReviews() {
+            var reviewsContainer = document.getElementById("reviews");
+            var reviews = [
+                { name: "John Doe", rating: 4, comment: "Great product! Very eco-friendly." },
+                { name: "Jane Smith", rating: 5, comment: "Excellent quality and sustainable materials." },
+                { name: "Alice Johnson", rating: 3, comment: "Good product, but could be more durable." }
+            ];
 
-  <script>
-    function showReviewDetails(reviewTitle) {
-      console.log("User clicked 'Read More' on review: " + reviewTitle);
-      // You can add code here to display more details of the review if needed
-    }
-  </script>
+            reviews.forEach(function(review) {
+                var reviewElement = document.createElement("div");
+                reviewElement.classList.add("review");
+                reviewElement.innerHTML = `
+                    <h3>${review.name}</h3>
+                    <p class="rating">Rating: ${review.rating}</p>
+                    <p>${review.comment}</p>
+                `;
+                reviewsContainer.appendChild(reviewElement);
+            });
+        }
+
+        // Call the function to populate reviews
+        populateReviews();
+    </script>
 </body>
 </html>
